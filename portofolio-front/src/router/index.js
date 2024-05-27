@@ -9,6 +9,21 @@ const routes = [
     component: HomeView,
   },
   {
+    path: "/projects",
+    name: "projects",
+    component: ProjectsView,
+  },
+  {
+    path: "/",
+    name: "home",
+    component: HomeView,
+  },
+  {
+    path: "/blog",
+    name: "blog",
+    component: BlogView,
+  },
+  {
     path: "/404",
     name: "notFound",
     component: NotFoundView,
