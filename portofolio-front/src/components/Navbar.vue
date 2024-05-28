@@ -1,28 +1,24 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav
+    id="main-navbar"
+    class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+  >
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <!-- Toggle button -->
       <button
+        data-mdb-button-init
         class="navbar-toggler"
         type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-        aria-controls="navbarNav"
+        data-mdb-collapse-init
+        data-mdb-target="#sidebarMenu"
+        aria-controls="sidebarMenu"
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        Toggle
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="/projects">Projects</a>
-          </li>
-        </ul>
-      </div>
+
+      <!-- Brand -->
     </div>
   </nav>
 </template>
