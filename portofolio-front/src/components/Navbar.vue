@@ -1,61 +1,28 @@
 <template>
-  <div class="container">
-    <ul class="overflow-y-auto buttons-zone pt-5">
-      <li class="container button-nav">
-        <a href="/">
-          <div class="row p-2">
-            <div class="col">Home</div>
-          </div>
-        </a>
-      </li>
-      <li class="container button-nav">
-        <a href="/projects">
-          <div class="row p-2">
-            <div class="col">Projects</div>
-          </div>
-        </a>
-      </li>
-      <li class="container button-nav">
-        <a href="/blog">
-          <div class="row p-2">
-            <div class="col">Blog</div>
-          </div>
-        </a>
-      </li>
-    </ul>
-    <div class="links-zone">
-      <div class="row">
-        <div class="col">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.linkedin.com/in/alexandru-b%C3%AEl%C4%83-2b91a3198/"
-            class="link"
-          >
-            <b-icon icon="linkedin"></b-icon>
-          </a>
-        </div>
-        <div class="col">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://github.com/alexb997"
-            class="link"
-          >
-            <b-icon icon="github"></b-icon>
-          </a>
-        </div>
-        <div class="col">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://www.facebook.com/alexandru.bila.90/"
-            class="link"
-          >
-            <b-icon icon="facebook"></b-icon>
-          </a>
-        </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="/projects">Projects</a>
+          </li>
+        </ul>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
