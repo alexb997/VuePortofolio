@@ -1,48 +1,47 @@
+<script setup>
+import { RouterLink } from "vue-router";
+</script>
+
 <template>
-  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+  <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-dark">
     <div class="position-sticky">
-      <div class="list-group list-group-flush mx-3 mt-4">
-        <a
-          href="/"
-          class="list-group-item list-group-item-action py-2 ripple active"
+      <div class="list-group-flush mx-3 mt-4 sidebar-links">
+        <RouterLink
+          to="/"
+          active-class="active"
+          class="list-group-item router-link list-group-item-action py-2 px-3 ripple"
         >
           <span>Home</span>
-        </a>
-        <a
-          href="/projects"
-          class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-lock fa-fw me-3"></i><span>Projects</span></a
+        </RouterLink>
+        <RouterLink
+          to="/projects"
+          active-class="active"
+          class="list-group-item router-link list-group-item-action py-2 px-3 ripple"
+          ><span>Projects</span></RouterLink
         >
-        <a
-          href="/blog"
-          class="list-group-item list-group-item-action py-2 ripple"
-          ><i class="fas fa-chart-line fa-fw me-3"></i><span>Blog</span></a
+        <RouterLink
+          to="/blog"
+          active-class="active"
+          class="list-group-item router-link list-group-item-action py-2 px-3 ripple"
+          ><span>Blog</span></RouterLink
         >
       </div>
     </div>
   </nav>
-  <nav
-    id="main-navbar"
-    class="navbar navbar-expand-lg navbar-light bg-white fixed-top"
-  >
-    <div class="container-fluid">
-      <!-- Toggle button -->
-      <button
-        data-mdb-button-init
-        class="navbar-toggler"
-        type="button"
-        data-mdb-collapse-init
-        data-mdb-target="#sidebarMenu"
-        aria-controls="sidebarMenu"
-        aria-expanded="true"
-        aria-label="Toggle navigation"
-      >
-        Toggle
-      </button>
-
-      <!-- Brand -->
-    </div>
-  </nav>
+  <div class="container-fluid fixed-top">
+    <button
+      data-mdb-button-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-collapse-init
+      data-mdb-target="#sidebarMenu"
+      aria-controls="sidebarMenu"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      Toggle
+    </button>
+  </div>
 </template>
 
 <style scoped>
@@ -55,6 +54,7 @@
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
   width: 240px;
   z-index: 600;
+  color: gray;
 }
 
 @media (max-width: 991.98px) {
@@ -64,7 +64,7 @@
 }
 .sidebar .active {
   border-radius: 5px;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .sidebar-sticky {
@@ -73,6 +73,6 @@
   height: calc(100vh - 48px);
   padding-top: 0.5rem;
   overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  overflow-y: auto;
 }
 </style>

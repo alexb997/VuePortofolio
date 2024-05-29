@@ -3,6 +3,7 @@ import HomeView from "../views/HomeView.vue";
 import NotFoundView from "../views/NotFoundView.vue";
 import ProjectsView from "@/views/ProjectsView.vue";
 import BlogView from "@/views/BlogView.vue";
+import ProjectDetailsView from "@/views/ProjectDetailsView.vue";
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: "/projects",
     name: "projects",
     component: ProjectsView,
+  },
+  {
+    path: "/project/:id",
+    name: "project",
+    component: ProjectDetailsView,
   },
   {
     path: "/blog",
