@@ -28,3 +28,9 @@ export default {
   name: "HomeView",
 };
 </script>
+
+<style scoped>
+.container {
+  height: 300vh;
+}
+</style>
