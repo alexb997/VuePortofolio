@@ -5,30 +5,11 @@
     <div v-if="loading">Loading...</div>
     <div v-else-if="error">{{ error }}</div>
     <div v-else class="col">
-      <div
-        class="m-3"
+      <project-card
         v-for="(project, index) in projects"
         :key="index"
-        style="height: 300px"
-      >
-        <router-link :to="`/project/${project.id}`">
-          <div class="card h-100" :title="project.name">
-            <div
-              class="card-img"
-              :src="project.imgUrl"
-              alt="Project image"
-            ></div>
-            <div class="card-text">
-              <div class="mb-2">
-                <strong>Description:</strong> {{ project.description }}
-              </div>
-              <div class="mb-2">
-                <strong>Status:</strong> {{ project.status }}
-              </div>
-            </div>
-          </div>
-        </router-link>
-      </div>
+        :project="project"
+      ></project-card>
     </div>
 
     <div>
@@ -39,11 +20,15 @@
 </template>
 
 <script>
+import ProjectCard from "@/components/ProjectCard.vue";
 import axios from "axios";
 import { ref, onMounted } from "vue";
 
 export default {
   name: "ProjectsView",
+  components: {
+    ProjectCard,
+  },
   setup() {
     const projects = ref([]);
     const loading = ref(true);
