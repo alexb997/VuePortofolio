@@ -45,4 +45,9 @@ export default {
   overflow: hidden;
   height: 14rem;
 }
+.button-project {
+  width: 30%;
+  float: right;
+  margin-right: 0.5rem;
+}
 </style>

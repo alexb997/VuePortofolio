@@ -27,4 +27,7 @@ export default {
     padding-left: 240px;
   }
 }
+main{
+  background: linear-gradient(to right, #d7d2cc 0%, #304352 100%); 
+}
 </style>
