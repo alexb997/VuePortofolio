@@ -5,6 +5,8 @@ import ProjectsView from "@/views/ProjectsView.vue";
 import BlogView from "@/views/BlogView.vue";
 import ProjectDetailsView from "@/views/ProjectDetailsView.vue";
 import AdminView from "@/views/AdminView.vue";
+import AddPost from "@/components/AddPost.vue";
+import AddProject from "@/components/AddProject.vue";
 
 const routes = [
   {
