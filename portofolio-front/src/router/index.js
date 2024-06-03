@@ -4,6 +4,7 @@ import NotFoundView from "../views/NotFoundView.vue";
 import ProjectsView from "@/views/ProjectsView.vue";
 import BlogView from "@/views/BlogView.vue";
 import ProjectDetailsView from "@/views/ProjectDetailsView.vue";
+import AdminView from "@/views/AdminView.vue";
 
 const routes = [
   {
@@ -25,6 +26,21 @@ const routes = [
     path: "/blog",
     name: "blog",
     component: BlogView,
+  },
+  {
+    path: "/admin",
+    name: "admin",
+    component: AdminView,
+  },
+  {
+    path: "/admin/project",
+    name: "project",
+    component: AddProject,
+  },
+  {
+    path: "/admin/blog",
+    name: "post",
+    component: AddPost,
   },
   {
     path: "/404",
