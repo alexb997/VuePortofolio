@@ -44,23 +44,99 @@
       <button type="submit" class="btn btn-primary">Add Post</button>
     </form>
   </div>
+  <div>
+    <h3>All Posts</h3>
+    <div class="container">
+      <div v-if="loading">Loading...</div>
+      <div v-else-if="error">{{ error }}</div>
+      <div v-else>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Reference</th>
+              <th>Update</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="post in posts" :key="post.id">
+              <td>{{ post.title }}</td>
+              <td>{{ post.description }}</td>
+              <td>{{ post.type }}</td>
+              <td>{{ post.reference }}</td>
+              <td>
+                <button class="btn btn-warning">Update</button>
+              </td>
+              <td>
+                <button class="btn btn-danger" @click="deletePost(post.id)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div>
+          <button @click="previousPage" :disabled="page === 1">Previous</button>
+          <button @click="nextPage">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
 import { ref } from "vue";
 import axios from "axios";
-import { useRoute } from "vue-router";
 
 export default {
   name: "AddPost",
   setup() {
-    const route = useRoute();
-    const projectId = route.params.id;
+    const posts = ref([]);
+    const loading = ref(true);
+    const error = ref(null);
+    const page = ref(1);
+    const pageSize = ref(5);
     const post = ref({
       title: "",
       description: "",
       type: "",
       reference: "",
+    });
+
+    const fetchPosts = async () => {
+      loading.value = true;
+      try {
+        const response = await axios.get("http://localhost:8080/post/", {
+          params: {
+            page: page.value,
+            pageSize: pageSize.value,
+          },
+        });
+        posts.value = response.data;
+        loading.value = false;
+      } catch (err) {
+        error.value = "Failed to fetch projects";
+        loading.value = false;
+      }
+    };
+
+    const nextPage = () => {
+      page.value += 1;
+      fetchPosts();
+    };
+
+    const previousPage = () => {
+      if (page.value > 1) {
+        page.value -= 1;
+        fetchPosts();
+      }
+    };
+
+    onMounted(() => {
+      fetchPosts();
     });
 
     const addPost = async () => {
@@ -81,10 +157,25 @@ export default {
         alert("Failed to add post");
       }
     };
+    const deletePost = async (id) => {
+      try {
+        await axios.delete(`http://localhost:8080/post/${id}`);
+        fetchPosts();
+      } catch (err) {
+        error.value = "Failed to delete post";
+      }
+    };
 
     return {
       post,
       addPost,
+      posts,
+      loading,
+      error,
+      page,
+      nextPage,
+      previousPage,
+      deletePost,
     };
   },
 };
