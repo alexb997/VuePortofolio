@@ -7,6 +7,8 @@ import ProjectDetailsView from "@/views/ProjectDetailsView.vue";
 import AdminView from "@/views/AdminView.vue";
 import AddPost from "@/components/AddPost.vue";
 import AddProject from "@/components/AddProject.vue";
+import UpdatePost from "@/components/UpdatePost.vue";
+import UpdateProject from "@/components/UpdateProject.vue";
 
 const routes = [
   {
@@ -40,9 +42,19 @@ const routes = [
     component: AddProject,
   },
   {
+    path: "/admin/project/:id",
+    name: "projectUpdate",
+    component: UpdateProject,
+  },
+  {
     path: "/admin/blog",
     name: "post",
     component: AddPost,
+  },
+  {
+    path: "/admin/post/:id",
+    name: "postUpdate",
+    component: UpdatePost,
   },
   {
     path: "/404",

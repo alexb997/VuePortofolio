@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div class="links">
-      <a :href="'admin/projects'"> Projects </a>
-      <a :href="'admin/posts'"> Posts </a>
+      <a :href="'admin/project'"> Projects </a>
+      <a :href="'admin/blog'"> Posts </a>
     </div>
   </div>
 </template>
