@@ -111,8 +111,11 @@ export default {
 </script>
 
   
-  <style>
+  <style scoped>
   .posts {
+    min-height: 100vh;
+  }
+  .container{
     min-height: 100vh;
   }
   

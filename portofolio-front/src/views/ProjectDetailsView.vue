@@ -27,12 +27,6 @@
         </PostCard>
       </div>
     </div>
-    <div class="pb-5">
-      <h3>Add a post:</h3>
-      <a :href="project.id + `/addPost`"
-        >Redirect(Adauga trimitere proiect la componenta creeare post)</a
-      >
-    </div>
   </div>
 </template>
 

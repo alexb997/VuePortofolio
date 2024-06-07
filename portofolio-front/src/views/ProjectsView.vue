@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="projects">
     <h3>All Projects</h3>
 
     <div v-if="loading">Loading...</div>
@@ -80,3 +80,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.projects {
+  min-height: 100vh;
+}
+</style>

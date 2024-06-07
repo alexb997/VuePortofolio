@@ -31,6 +31,6 @@ export default {
 
 <style scoped>
 .container {
-  height: 300vh;
+  min-height: 100vh;
 }
 </style>
