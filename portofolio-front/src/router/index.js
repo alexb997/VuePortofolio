@@ -38,7 +38,7 @@ const routes = [
   },
   {
     path: "/admin/project",
-    name: "project",
+    name: "projectAdd",
     component: AddProject,
   },
   {
